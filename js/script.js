@@ -87,7 +87,21 @@ ulPagination.addEventListener('click', (e) => {
    }
 })
 
+//Create and Insert Search Bar
+createSearchBar = () => {
+   const html = `
+   <label for="search" class="student-search">
+      <input id="search" placeholder="Search by name...">
+      <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
+   </label>
+ `
+   const header = document.querySelector('header.header');
+   header.insertAdjacentHTML('beforeend', html);
+   console.log(header);
+}
+
 
 // Call functions the first time
 showPage(data, 1);
 addPagination(data);
+createSearchBar();
