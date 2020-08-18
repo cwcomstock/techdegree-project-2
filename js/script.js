@@ -127,7 +127,6 @@ createSearchBar = () => {
  * @param {boolean} display - display students = true
  ***/
 displayNoStudentMessage = (display) => {
-   console.log(display);
    const paragraphForMessage = document.querySelector("p#message");
    if (display) {
       paragraphForMessage.style.display = 'block';
@@ -156,9 +155,8 @@ const updateStudentArrow = e => {
    const input = document.querySelector('input#search');
    let currentInputValue = input.value.toLowerCase();
 
-   //Searchs first and last name for a match - Inorder to be able to enter both first AND last name in the search,
-   //                                        - I would have to add a new property to name, combining first and last names and then search that property below
-   let students = data.filter(student => (student.name.first.toLowerCase().includes(currentInputValue) || student.name.last.toLowerCase().includes(currentInputValue)));
+   let students = data.filter(student => ((student.name.first.toLowerCase() + " " + student.name.last.toLowerCase()).includes(currentInputValue)));
+
    if (students.length > 0) {
       currentStudentList = students;
       displayNoStudentMessage(false);
