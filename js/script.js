@@ -164,6 +164,8 @@ const updateStudentArrow = e => {
       addPagination(students);
    } else {
       currentStudentList = data;
+      //not sure if I should set this to blank or not.  The original list is loaded and it looks strange having a value there
+      // input.value = '';
       displayNoStudentMessage(true);
       showPage(currentStudentList, 1);
       addPagination(currentStudentList);
