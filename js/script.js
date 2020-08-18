@@ -140,7 +140,7 @@ displayNoStudentMessage = (display) => {
  * Update the array of students based on the input box's value - called from an input event listener
  *    (created one function to use for both click and keyup then found input and it seems to take care of both)
  * 1) get input element and input current value
- * 2) search for students in the master array for matches to the input's value
+ * 2) search for students in the master array for matches to the input's value and return new list
  * 3) display the new list in the page OR
  *    the original master list if no matches & display a message that no matches were found
  * @param {event} e - object/interface representing the click event
