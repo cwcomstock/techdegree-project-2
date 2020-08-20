@@ -65,8 +65,10 @@ const addPagination = list => {
    }
 
    ulPagination.insertAdjacentHTML('beforeend', html);
-   //grab fist li and add active class
-   ulPagination.firstElementChild.firstElementChild.className = 'active';
+   if (list.length > 0) {
+      //grab fist li and add active class
+      ulPagination.firstElementChild.firstElementChild.className = 'active';
+   }
 }
 
 /***
@@ -163,7 +165,7 @@ const updateStudentArrow = e => {
       showPage(currentStudentList, 1);
       addPagination(students);
    } else {
-      currentStudentList = data;
+      currentStudentList = [];
       //not sure if I should set this to blank or not.  The original list is loaded and it looks strange having a value there
       // input.value = '';
       displayNoStudentMessage(true);
